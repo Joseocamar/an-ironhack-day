@@ -19,6 +19,8 @@ var game = {
     this._setDimensions()
     this.background = new Background(game)
     this.player = new Player(game)
+
+    
     
     
     this.start()
@@ -54,6 +56,7 @@ var game = {
   _moving: function() {
     
     this.background.moveBg()
+    this.player.move()
     
   
   },
