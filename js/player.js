@@ -26,14 +26,26 @@ Player.prototype.drawImg = function() {
 
 Player.prototype.moveUp = function() {
 
-    if(this.y === this.y2){
+  
+
+    if(this.y <= this.y2){
       console.log("You cannot go up boy")
     }
-    if(this.y === this.y1){
-      this.y ==
+    if(this.y <= this.y1 && this.y > this.y2){
+      
+      
+      this.vy = 5
+      this.y -= this.vy
+
+
+
     }
-    if(this.y === this.y0){
-      this.y = this.y1
+    if(this.y <= this.y0 && this.y >= this.y1){
+      
+      this.vy = 5
+      this.y -= this.vy
+
+
     }     
 }
 
@@ -51,7 +63,7 @@ Player.prototype.moveDown = function() {
   }
 
   Player.prototype.setListener = function() {
-    document.onkeyup = function() {
+    document.onkeydown = function() {
   
       if(event.keyCode === this.game.key.arrowUp){
 
