@@ -37,10 +37,6 @@ var game = {
 
     window.onresize = function () {
       this._setDimensions()
-      this.player.y0()
-      this.player.y1()
-      this.player.y2()
-      this.player.x()
     }.bind(this)
   
   
@@ -58,7 +54,7 @@ var game = {
   _moving: function() {
     
     this.background.moveBg()
-    this.player.move()
+    
   
   },
 

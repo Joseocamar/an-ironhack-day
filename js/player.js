@@ -1,11 +1,11 @@
 function Player (game) {
 
 this.game = game
-this.x = function() {return game.canvas.width*0.22}
-this.y = 0
-this.y0 = function() {return game.canvas.height*0.8}
-this.y1 = function() {return game.canvas.height*0.53}
-this.y2 = function() {return game.canvas.height*0.26}
+this.x = this.game.canvas.width*.22
+this.y0 = this.game.canvas.height*.8
+this.y1 = this.game.canvas.height*.53
+this.y2 = this.game.canvas.height*.26
+this.y = this.y0
 this.hp = 3
 this.playerImg = new Image()
 this.playerImg.src = "images/thump_55500030t212.png"
@@ -19,26 +19,55 @@ this.playerImg.frameIndex = 0
 
 Player.prototype.drawImg = function() {
 
-  this.game.ctx.drawImage(this.playerImg, this.x(), this.y1(), 70, 80)
+  this.game.ctx.drawImage(this.playerImg, this.x, this.y, 70, 80)
 
 }
 
-Player.prototype.setListener = function() {
-  document.onkeyup = function() {
 
-    if(event.keyCode === this.game.key.arrowUp && this.y === this.y0 || event.keyCode === this.game.key.arroUp && this.y == this.y1)
-      console.log("Hola"); else console.log("No funciona")
-  }.bind(this)
+Player.prototype.moveUp = function() {
+
+    if(this.y === this.y2){
+      console.log("You cannot go up boy")
+    }
+    if(this.y === this.y1){
+      this.y ==
+    }
+    if(this.y === this.y0){
+      this.y = this.y1
+    }     
 }
 
-Player.prototype.move = function() {
+Player.prototype.moveDown = function() {
+  if(this.y === this.y0){
+        console.log("You cannot go down boy")
+      }
+  if(this.y === this.y1){
+        this.y = this.y0
+      }
+  if (this.y === this.y2){
+        this.y = this.y1
+        
+    }
+  }
 
-}
-
-Player.prototype.jump = function() {
-
+  Player.prototype.setListener = function() {
+    document.onkeyup = function() {
   
+      if(event.keyCode === this.game.key.arrowUp){
 
-}
+        this.moveUp()
+
+      }
+  
+      if(event.keyCode === this.game.key.arrowDown){
+
+        this.moveDown()
+
+      }
+      
+    }.bind(this)
+  }
+
+
 
 
