@@ -19,6 +19,7 @@ var game = {
     this._setDimensions()
     this.background = new Background(game)
     this.player = new Player(game)
+    this.platform = new Platform(game)
 
     
     
@@ -64,7 +65,9 @@ var game = {
   _draw: function() {
   
     this.background.drawBg()
-    this.player.drawImg()
+    this.platform.platformDraw1()
+    this.platform.platformDraw2()
+    this.player.drawPlayer()
   }
 
 
