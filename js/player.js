@@ -1,7 +1,7 @@
 function Player (game) {
 
 this.game = game
-this.x = Math.floor(this.game.canvas.width*.22)
+this.x = Math.floor(this.game.canvas.width*.10)
 this.y0 = Math.floor(this.game.canvas.height*.8)
 this.y1 = Math.floor(this.game.canvas.height*.8-160)
 this.y2 = Math.floor(this.game.canvas.height*.8-320)
@@ -101,14 +101,14 @@ Player.prototype.changeShot = function () {
       if(event.keyCode === this.game.key.arrowDown){
 
         this.moveDown()
+        
 
       }
       if(event.keyCode === this.game.key.c){
-        console.log(this.typeOfShot)
         this.changeShot()
       }
       if(event.keyCode === this.game.key.space){
-        if(this.bulletType.length <= 10) this.shooting()
+        if(this.bulletType.length < 5) this.shooting()
       }
       
     }.bind(this)
@@ -123,7 +123,6 @@ Player.prototype.move = function () {
     
 
     this.y += this.vy
-    console.log(this.y)
     if (this.y2 % this.y === 0) {this.y = this.y2}
     
   }
@@ -131,14 +130,12 @@ Player.prototype.move = function () {
   if (this.y2 < this.y && this.y1 > this.y) {
     
     this.y += this.vy
-    console.log(this.y)
     if (this.y1 % this.y === 0) {this.y = this.y1}
   }
 
   if (this.y1 < this.y && this.y0 > this.y) {
     
     this.y += this.vy
-    console.log(this.y)
     if (this.y0 % this.y === 0) {this.y = this.y0}
   }
 
