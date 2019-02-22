@@ -3,8 +3,8 @@ function Shoots (game, x, y, typeOfShot) {
   this.x = x
   this.y = y
   this.vx = 25
-  this.w = 50
-  this.h = 20
+  this.w = 75
+  this.h = 30
   this.shot = typeOfShot
   this.shotImgOne = new Image() 
   this.shotImgOne.src = "images/bala1.png"

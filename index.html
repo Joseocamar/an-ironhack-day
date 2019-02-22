@@ -12,12 +12,32 @@
   <script type="text/javascript" src="js/shoot.js"></script>
   <script type="text/javascript" src="js/enemy1.js"></script>
   <script type="text/javascript" src="js/enemy2.js"></script>
-  <script type="text/javascript" src="js/1up.js"></script>
+  <script type="text/javascript" src="js/finalboss.js"></script>
+  <script type="text/javascript" src="js/score.js"></script>
   <script type="text/javascript" src="js/game.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
 </head>
 <body>
+<div id="menu">
+  <p>An Ironhack Day</p>
+  <div id="center">
+    <span class="start">Start Day</span>
+    <iframe src="sound/menuMusic.mp3" allow="autoplay" style="display:none" id="iframeAudio">
+    </iframe> 
+  </div>
+</div>
 
+<div id="gameover">
+  <p>You got frustrated...</p>
+  <p><span>:(</span></p>
+  <p>Take a coffee and go home</p>
+</div>
+
+<div id="win">
+  <p>You survived the Day</p>
+  <p><span>:D</span></p>
+  <p>Take a cold Beer!</p>
+</div>
   <canvas id="videojuego">
 
   </canvas>

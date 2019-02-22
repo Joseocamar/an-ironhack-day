@@ -10,7 +10,7 @@ this.hp = 3
 this.w = 70
 this.h = 80
 this.playerImg = new Image()
-this.playerImg.src = "images/thump_55500030t212.png"
+this.playerImg.src = "images/player1.png"
 this.yv = undefined
 this.typeOfShot = 0
 
